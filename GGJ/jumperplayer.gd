@@ -4,10 +4,10 @@ var motion = Vector2()
 
 func _physics_process(delta):
 	motion.x = 0
-	if Input.is_action_pressed("movement_left"):
+	if Input.is_action_pressed("ui_left"):
 		motion.x -= 600
 		get_node("AnimatedSprite").set_flip_h( true )
-	if Input.is_action_pressed("movement_right"):
+	if Input.is_action_pressed("ui_right"):
 		motion.x += 600
 		get_node("AnimatedSprite").set_flip_h( false )
 	if Input.is_action_just_pressed("jump") && is_on_floor():
