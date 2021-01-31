@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://jumperplayer.tscn" type="PackedScene" id=2]
+[ext_resource path="res://TileMap.tscn" type="PackedScene" id=3]
+
+[node name="stage1" type="Node2D"]
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+script = null
+
+[node name="jumperplayer" parent="." instance=ExtResource( 2 )]
+position = Vector2( -1155.28, 1563.55 )
+scale = Vector2( 3, 3 )
