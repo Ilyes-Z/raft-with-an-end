@@ -17,5 +17,5 @@ func _physics_process(delta):
 		$AnimatedSprite.play()
 	else:
 		$AnimatedSprite.stop()
-	motion.y += 2400 * delta
+	motion.y += 0 * delta
 	motion = move_and_slide(motion, Vector2(0, -1))
