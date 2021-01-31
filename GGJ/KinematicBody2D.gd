@@ -12,7 +12,6 @@ func _physics_process(delta):
 		get_node("AnimatedSprite").set_flip_h( false )
 	if Input.is_action_just_pressed("jump") && is_on_floor():
 		motion.y -= 1200
-		$jumpsound.play()
 	if motion.x != 0:
 		$AnimatedSprite.play()
 	else:
