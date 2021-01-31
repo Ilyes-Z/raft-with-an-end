@@ -44,7 +44,7 @@ margin_top = 281.524
 margin_right = 833.719
 margin_bottom = 295.524
 rect_scale = Vector2( 4, 4 )
-text = "You get back home."
+text = "You are back home."
 __meta__ = {
 "_edit_use_anchors_": false
 }

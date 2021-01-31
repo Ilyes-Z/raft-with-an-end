@@ -17,8 +17,8 @@ animations = [ {
 } ]
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 25.963
-height = 13.1696
+radius = 17.7697
+height = 24.9
 
 [node name="jumperplayer" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -32,7 +32,7 @@ speed_scale = 2.0
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -12.5032, -0.0481489 )
+position = Vector2( -8.13785, -0.84185 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]

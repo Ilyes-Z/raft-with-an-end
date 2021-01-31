@@ -27,7 +27,6 @@ position = Vector2( 814.758, 516.282 )
 stream = ExtResource( 4 )
 
 [node name="Area2D" type="Area2D" parent="."]
-visible = false
 script = ExtResource( 5 )
 
 [node name="Sprite" type="Sprite" parent="Area2D"]
