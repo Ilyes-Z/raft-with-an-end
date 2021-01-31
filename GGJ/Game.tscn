@@ -1,9 +1,19 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game.gd" type="Script" id=3]
 [ext_resource path="res://ressource/sound/music_sl.ogg" type="AudioStream" id=4]
+[ext_resource path="res://quest.gd" type="Script" id=5]
+[ext_resource path="res://ressource/players/tarzan.png" type="Texture" id=6]
+[ext_resource path="res://houseToGate.gd" type="Script" id=7]
+[ext_resource path="res://housed.png" type="Texture" id=8]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 91.8298, 36.9824 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 85.0757, 69.5352 )
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 3 )
@@ -15,3 +25,59 @@ position = Vector2( 814.758, 516.282 )
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="Area2D"]
+position = Vector2( 3949.54, 1097.34 )
+texture = ExtResource( 6 )
+vframes = 7
+hframes = 11
+frame = 11
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 3949.4, 1099.23 )
+shape = SubResource( 1 )
+
+[node name="Label" type="Label" parent="Area2D"]
+visible = false
+margin_left = 3902.97
+margin_top = 1061.78
+margin_right = 3993.97
+margin_bottom = 1075.78
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2( 2509.62, 5482.2 )
+script = ExtResource( 7 )
+
+[node name="Sprite" type="Sprite" parent="Area2D2"]
+position = Vector2( 0.526367, 0.525391 )
+scale = Vector2( 0.374659, 0.348928 )
+texture = ExtResource( 8 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2( 0.526367, 0.525879 )
+shape = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Area2D2"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_Area2D_body_exited"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_entered"]
+[connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_Area2D2_body_exited"]

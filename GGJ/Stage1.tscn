@@ -6,7 +6,6 @@
 [node name="stage1" type="Node2D"]
 
 [node name="TileMap" parent="." instance=ExtResource( 3 )]
-script = null
 
 [node name="jumperplayer" parent="." instance=ExtResource( 2 )]
 position = Vector2( -1155.28, 1563.55 )
